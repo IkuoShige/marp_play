@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"markdown.marp.themes": [
+			// 自作CSSファイルのパスを入力
+			"./marp-theme/theme.css"
+		],
+	}
+}

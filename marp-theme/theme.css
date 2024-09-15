@@ -1,0 +1,108 @@
+/* @theme custom-theme */
+
+@import 'default';
+
+section {
+  width: 1920px;
+  height: 1080px;
+  /* width: 1280px;
+  height: 720px; */
+  font-size: 40px;
+  /* font-size: 40pt; */
+  padding: 40px;
+  background-color: white;
+  justify-content: start;
+}
+
+/* タイトルスライド */
+section.title {
+  background-image: url(./logo2_small.png);
+  background-repeat: no-repeat;
+  background-position: right 20px bottom 20px; /* 右下から40pxずつ内側に */
+  background-size: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* タイトルスライドではフッターとページ番号を非表示 */
+section.title header,
+section.title footer,
+section.title::after {
+  display: none;
+}
+
+/* 通常スライド */
+section:not(.title) {
+  background-image: url(./logo2_small.png);
+  background-repeat: no-repeat;
+  background-position: right 20px top 20px; /* 右上から20pxずつ内側に */
+  background-size: 20%;
+}
+
+/* 通常スライドの見出し1 */
+section:not(.title) h1 {
+  position: absolute; /* 絶対位置を設定 */
+  top: 50px;
+  left: 40px;
+  margin: 0;
+  /* font-size: 90px; */
+  font-size: calc(44px * 1.5 / 0.733333333);
+  /* font-size: 44pt; */
+  /* color: #09c; 色を設定 */
+}
+
+/* 新しいスタイルを追加 */
+section:not(.title) p, 
+section:not(.title) ul, 
+section:not(.title) ol {
+  position: relative; /* 相対位置を設定 */
+  top: 200px;
+  /* top: 2.33cm; */
+  left: 40px;
+  margin: 0;
+  /* font-size: 57px; */
+  font-size: calc(28px * 1.5 / 0.733333333);
+  /* font-size: 28pt; */
+}
+
+h1 {
+  /* font-size: 44pt; */
+  font-size: 90px;
+  color: rgb(0, 0, 0);
+}
+
+section {
+  position: relative;
+}
+
+header, footer, section::after {
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px; /* 全ての要素で同じフォントサイズを使用 */
+  font-size: 70%;
+  line-height: 0.8;
+  padding: 10px 20px;
+  color: #888888;
+}
+
+header {
+  width: 100%;
+  left: 0;
+  text-align: center;
+  top: unset;
+  font-style: Arial;
+}
+
+footer {
+  left: 100px;
+  font-style: Arial;
+}
+
+/* ページ番号 */
+section::after {
+  content: attr(data-marpit-pagination);
+  right: 20px;
+  font-size: 80%;
+}
