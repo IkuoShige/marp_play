@@ -9,5 +9,7 @@
 			// 自作CSSファイルのパスを入力
 			"./marp-theme/theme.css"
 		],
+		"markdown.marp.enableHtml": true,
+		"markdown.marp.html": "all",
 	}
 }
